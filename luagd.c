@@ -2145,8 +2145,7 @@ static int LgdImageGifAnimEndPtr(lua_State *L) {
 
 static const luaL_reg LgdFunctions[] =
 {
-/*  Leave Lua do it!
-    { "destroy",                LgdImageDestroy }, */
+    { "destroy",                LgdImageDestroy }, 
 
     { "create",                     LgdImageCreate },
     { "createPalette",              LgdImageCreatePalette },
