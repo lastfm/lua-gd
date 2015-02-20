@@ -65,9 +65,10 @@ INSTALL_PATH=`pkg-config luajit --variable=INSTALL_CMOD 2>/dev/null`
 
 all: $(OUTFILE)
 
+LUAJIT=/opt/openresty/luajit/bin/luajit
 $(OUTFILE): luagd.c
 	$(CC) -o $(OUTFILE) $(GDFEATURES) $(CFLAGS) luagd.c $(LFLAGS)
-	/opt/openresty/luajit/bin/luajit test_features.lua
+	$(LUAJIT) test_features.lua
 
 install: $(OUTFILE)
 	install -s $(OUTFILE) $(INSTALL_PATH)
